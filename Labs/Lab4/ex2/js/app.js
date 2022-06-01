@@ -2,13 +2,15 @@ var circle_coords=[]; //to store y coordinates of the circles
 
 var frames_count=0; //to find every 10th frame
 
+var diameter=8; // to find the height of the circle
+
 function setup() {
 
     createCanvas(400, 400);
+
+}
     
-    }
-    
-    function draw() {
+function draw() {
     
     background(127); //using some gray background
     
@@ -16,7 +18,7 @@ function setup() {
     
     for(let i = 0; i < circle_coords.length; i++){
     
-        //using width/2 as x coordinate and circle_coords[i] as y coordinate
+       console.log(diameter) //using width/2 as x coordinate and circle_coords[i] as y coordinate
     
         ellipse(width/2,circle_coords[i],diameter,diameter);
     
