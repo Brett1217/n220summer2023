@@ -1,26 +1,19 @@
-arr = []
 
-
-
-function setup() {
-  createCanvas(400, 400);
-
-  for (let i = 0; i < int(random(15, 20)); ++i) {
-    obj = {x:random(width), y: random(height), size: random(10, 20)};
-    
-    arr.push(obj);
-  }
+//looping for 100 times
+for(var i=0; i<100; i++) {
+  //creating a "div" element
+  var elem=document.createElement("div");
+  //setting 20px as height and width
+  elem.style.height="20px";
+  elem.style.width="20px";
+  //setting float to left
+  elem.style.float="left";
+  //generating three random values between 0 and 255 for random color
+  var r = Math.floor(Math.random() * 256);
+  var g = Math.floor(Math.random() * 256);
+  var b = Math.floor(Math.random() * 256);
+  //using this to create a background color for the element
+  elem.style.background="rgb(" + r + "," + g + "," + b + ")";
+  //appending element to the body of the page.
+  document.body.appendChild(elem);
 }
-
-function draw() {
-  background(220);
-  
-  arr.forEach(e => {
-    e.x += 1;
-    if (e.x > width) {
-      e.x = 0;
-    }
-    circle(e.x, e.y, e.size);
-  });
-}
-/*********** Output *************/
