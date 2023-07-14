@@ -1,14 +1,35 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+	<!---===== Applying Css Using Style Tag --->
+	<style type="text/css">
+		/*Accessing the ID Square*/
+		#square{
+			height: 100px; /*Setting height to 100px initially*/
+			width: 100px; /*Setting Width to 100px initially */
+			background-color: green; /*Setting div background to Green*/
+			cursor: pointer;
+		}
+	</style>
 </head>
 <body>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/p5.min.js" integrity="sha512-NxocnqsXP3zm0Xb42zqVMvjQIktKEpTIbCXXyhBPxqGZHqhcOXHs4pXI/GoZ8lE+2NJONRifuBpi9DxC58L0Lw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="js/app.js"></script>  
+	<!---========= Create Div with id square and onclick function fun() ======--->
+	<div id="square" onclick="fun()"></div>
+    <!------========== JavaScript Code using Script tag=======--->
+	<script type="text/javascript">
+		// function fun() created here
+		function fun() {
+			//accessing the div using id square
+			var x = document.getElementById('square');
+			//getting the width from the div and increasing 10% , adding px to it. 
+			var div_width = x.offsetWidth + (0.1 * x.offsetWidth)+"px";
+			//getting the height from the div and increasing 10% , adding px to it.
+			var div_height = x.offsetHeight + (0.1 * x.offsetHeight)+"px";
+			//Setting the width of div to new div_width
+			x.style.width = div_width;
+			//Setting the height of the div to new div_height
+			x.style.height = div_height;
+		}
+	</script>
 </body>
 </html>
