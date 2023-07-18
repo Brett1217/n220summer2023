@@ -1,30 +1,36 @@
-let r, g, b;
-
-function setup() {
-  createCanvas(720, 400);
-  // Pick colors randomly
-  r = random(255);
-  g = random(255);
-  b = random(255);
-}
-
-function draw() {
-  background(127);
-  // Draw a circle
-  strokeWeight(2);
-  stroke(r, g, b);
-  fill(r, g, b, 127);
-  ellipse(360, 200, 200, 200);
-}
-
-// When the user clicks the mouse
-function mousePressed() {
-  // Check if mouse is inside the circle
-  let d = dist(mouseX, mouseY, 360, 200);
-  if (d < 100) {
-    // Pick new random color values
-    r = random(255);
-    g = random(255);
-    b = random(255);
+(function () {
+  // global variables that will be loaded/initialized later
+  let canvas, ctx, gravity, ball, friction
+  // runs once at the beginning
+  // loads any data and kickstarts the loop
+  function init () {
+  // load data here
+  canvas = document.getElementById('gameCanvas')
+  ctx = canvas.getContext('2d')
+  // set the canvas size
+  canvas.width = 800
+  canvas.height = 800
+  // world/scene settings
+  gravity = 0.25
+  friction = 0.98
+  // begin update loop
+  window.requestAnimationFrame(update)
   }
-}
+  // draws stuff to the screen
+  // allows us to separate calculations and drawing
+  function draw () {
+  // clear the canvas and redraw everything
+  ctx.clearRect(0, 0, canvas.width, canvas.height)
+  }
+  // the main piece of the loop
+  // runs everything
+  function update () {
+  // queue the next update
+  window.requestAnimationFrame(update)
+  // logic goes here
+  // draw after logic/calculations
+  draw()
+  }
+  // start our code once the page has loaded
+  document.addEventListener('DOMContentLoaded', init)
+  })()
