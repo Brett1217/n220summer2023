@@ -1,34 +1,51 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>JRPG Battle System</title>
-    <style>
-      /* Add some basic styling for the stats container */
-      #stats-container {
-        display: flex;
-        justify-content: space-around;
-        margin-bottom: 20px;
-      }
-    </style>
-  </head>
-  <body>
-    <div id="stats-container">
-      <div id="player-stats">
-        <h2>Player</h2>
-        <p id="player-attack">Attack: </p>
-        <p id="player-hp">HP: </p>
-        <p id="player-defense">Defense: </p>
-      </div>
-      <div id="enemy-stats">
-        <h2>Enemy</h2>
-        <p id="enemy-attack">Attack: </p>
-        <p id="enemy-hp">HP: </p>
-        <p id="enemy-defense">Defense: </p>
-      </div>
-    </div>
-    <button onclick="attack()">Attack</button>
+<head>
+<meta charset="utf-8">
+<title>Number Guessing Game</title>
+<style>
+body {
+width: 50%;
+max-width: 800px;
+min-width: 480px;
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
-    <script src="script.js"></script>
-  </body>
+}
+</style>
+</head>
+
+<body>
+<h1>Guess The Number</h1>
+
+<p>Enter number between 1 - 20 </p>
+
+<div class="form">
+<label>Enter a guess Number: </label>
+<input type = "text" id = "txt" class = "txt">
+<input type = "submit" value = "Submit" id = "submitguess">
+</div>
+<script type = "text/javascript">
+var y = Math.floor(Math.random() * 20 + 1); //here random number from 1 to 20 is generated
+
+document.getElementById("submitguess").onclick = function(){
+var x = document.getElementById("txt").value;
+if(x == y)
+{
+alert("Guessed number and random number are equal");
+}
+else if(x > y) /* if guessed number is greater
+than random number*/
+{
+
+alert("Guessed Number is too high");
+document.getElementById("txt").value="";
+}
+else
+{
+
+alert("Guessed Number is too low");
+document.getElementById("txt").value="";
+}
+}
+</script>
+</body>
 </html>
