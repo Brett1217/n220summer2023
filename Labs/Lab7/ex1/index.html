@@ -1,13 +1,55 @@
-
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- <title> tag is used to place the title for web page -->
+
+<title>Welcome user</title>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 </head>
+
 <body>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/p5.min.js" integrity="sha512-NxocnqsXP3zm0Xb42zqVMvjQIktKEpTIbCXXyhBPxqGZHqhcOXHs4pXI/GoZ8lE+2NJONRifuBpi9DxC58L0Lw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="js/app.js"></script>  
+
+Enter Name :
+
+<!-- textbox for name -->
+
+<input type="text" id="txtName"/>
+
+<br> <br>
+
+<!-- button -->
+
+<input type="button" value="Submit" onclick="welcomeUser()"/>
+
+<!-- <script> tag is used for javascript -->
+
+<script>
+
+//function
+
+function welcomeUser()
+
+{
+
+//getting name entered by user
+
+var userName=document.getElementById("txtName").value;
+
+//display greet message to the user
+
+console.log("Hello "+userName);
+
+}
+
+</script>
+
 </body>
+
 </html>
