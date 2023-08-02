@@ -1,16 +1,36 @@
 
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/addons/p5.sound.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <meta charset="utf-8" />
+<html>
+<body>
 
-  </head>
-  <body>
-    <main>
-    </main>
-    <script src="sketch.js"></script>
-  </body>
+<p>Click the button to make a DIV element.</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<script>
+function createDiv(obj) {
+  var div = document.createElement("div");    
+  div.innerText = "This is a div.";
+  div.style.width = obj.width;
+  div.style.height = obj.height;
+  div.style.background=obj.color;
+  document.body.appendChild(div);
+
+}
+
+function myFunction(){
+let objects = [
+    { color: "#FF0000", height: 100, width: 300 },
+    { color: "#FFFF00", height: 200, width: 200 },
+    { color: "#ff0000", height: 300, width: 100 },
+];
+
+for(i=0;i<objects.length;i++)
+	createDiv(objects[i]);
+
+}
+
+</script>
+
+</body>
 </html>
