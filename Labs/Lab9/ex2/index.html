@@ -1,14 +1,122 @@
 
-<!DOCTYPE html>
-<html lang="en">
+<<! DOCTYPE html>
+
+<html lang = "zu">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+<title> Invalid Word Counter </title>
+
+<! - CSS ->
+
+<style>
+
+.sitsha {
+
+width: 100vw;
+
+text alignment: center;
+
+}
+
+</style>
+
 </head>
+
 <body>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/p5.min.js" integrity="sha512-NxocnqsXP3zm0Xb42zqVMvjQIktKEpTIbCXXyhBPxqGZHqhcOXHs4pXI/GoZ8lE+2NJONRifuBpi9DxC58L0Lw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="js/app.js"></script>  
+
+<div class = "container">
+
+<br>
+
+<label for = "sentence"> Enter a sentence: </label>
+
+<input type = "text" id = "sent" name = "musho"> <br> <br>
+
+<! - The button calls the test function by clicking ->
+
+<button id = "sent" type = "submit" onclick = "myevaluate ()"> CHECK </ button>
+
+<p class = "message"> </p>
+
+</div>
+
+<! - JAVASCRIPT ->
+
+<script>
+
+// Save bad words
+
+let generation = ["clear", "water", "tie"];
+
+// Announcing bad words to count
+
+let's count;
+
+myevaluate function () {
+
+// Empty dynamic startup
+
+number = 0;
+
+let text = "";
+
+// Find the sentence in the input field
+
+text = document.getElementById ("sent"). value;
+
+allow words = [];
+
+// Separate the sentence into blank spaces and save the words
+
+words = text.split ("");
+
+// Opening by category list
+
+for (let i = 0; i <sizukulwanards.length; i ++) {
+
+// Check the word list
+
+for (let j = 0; j <words.length; j ++) {
+
+// To check if a bad name exists
+
+if (words [j] == generation [i]) {
+
+// Increasing the number
+
+count ++;
+
+}
+
+}
+
+}
+
+// If there is no bad word print the message inside the 'p' item
+
+if (color == 0) {
+
+document.querySelector (". message"). innerHTML = "No bad name found";
+
+}
+
+// If a bad word exists print a message inside the 'p' item and count
+
+other {
+
+document.querySelector (". message"). innerHTML = "Bad word detected <br> Total noun:" + count;
+
+}
+
+// Reset input field to empty
+
+document.getElementById ("sent"). value = "";
+
+};
+
+</script>
+
 </body>
+
 </html>
